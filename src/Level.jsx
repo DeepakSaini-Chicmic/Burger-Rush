@@ -1,5 +1,3 @@
-import { useGLTF } from "@react-three/drei";
-import { RigidBody } from "@react-three/rapier";
 import { useMemo } from "react";
 import BlockSpinner from "./Traps/BlockSpinner";
 import BlockAxe from "./Traps/BlockAxe";
@@ -7,6 +5,13 @@ import BlockLimbo from "./Traps/BlockLimbo";
 import Walls from "./Walls/Walls";
 import NormalFloor from "./Floor/NormalFloor";
 import Reward from "./Reward/Reward";
+
+/**
+ * @description One Level of the Game
+ * @param Count - Number of Obstacle Blocks, by default - 5
+ * @param Types - Type of Obstacles in the Level, by default - BlockSpinner, BlockAxe, BlockLimbo
+ * @returns Walls, Starting Floor, Traps and Rewards
+ */
 
 export default function Level({
   count = 5,

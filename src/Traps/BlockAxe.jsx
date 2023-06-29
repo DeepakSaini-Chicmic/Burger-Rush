@@ -1,7 +1,7 @@
+import { RigidBody } from "@react-three/rapier";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import ObstacleFloor from "../Floor/ObstacleFloor";
-import { RigidBody } from "@react-three/rapier";
 import {
   boxGeometry,
   obstacleMaterial,

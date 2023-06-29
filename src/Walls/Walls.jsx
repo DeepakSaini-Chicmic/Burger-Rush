@@ -29,7 +29,7 @@ export default function Walls({ length }) {
           receiveShadow
         />
 
-        <mesh
+        {/* <mesh
           geometry={boxGeometry}
           material={wallMaterial}
           position={[0, height, 2 + thickness]}
@@ -37,7 +37,7 @@ export default function Walls({ length }) {
           scale={[thickness * 2, height * 2, 4]}
           castShadow
           receiveShadow
-        />
+        /> */}
 
         <mesh
           geometry={boxGeometry}
