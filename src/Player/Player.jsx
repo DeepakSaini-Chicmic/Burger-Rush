@@ -3,7 +3,10 @@ import { useFrame } from "@react-three/fiber";
 import { useRapier, RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 import { useState, useEffect, useRef } from "react";
-
+/**
+ * @description Player Movement and Camera Movement Following
+ * @returns 
+ */
 export default function Player() {
   const ball = useRef();
   const [subscribeKeys, getKeys] = useKeyboardControls();

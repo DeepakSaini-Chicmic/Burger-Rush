@@ -28,7 +28,7 @@ export default function BlockSpinner({ position = [0, 0, 0] }) {
     const eulerRotation = new THREE.Euler(0, time * speed, 0); //Euler Rotation angle in x, y and z
     const quaternionRotation = new THREE.Quaternion(); //Quaternion Rotation angle
     quaternionRotation.setFromEuler(eulerRotation); // setting the Quaternion angle from Euler angle
-    spinner.current.setNextKinematicRotation(quaternionRotation); //setNextKinematicRotation - used for rotating the obstacle on each next frame
+    spinner.current.setNextKinematicRotation(quaternionRotation); //setNextKinematicRotation - used for rotating the rigid body
   });
   return (
     <>

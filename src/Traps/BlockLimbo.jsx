@@ -12,14 +12,14 @@ import {
  * @param Position positioning of the block, by default [x:0,y:0,z:0]
  * @returns Group containing Floor and RigidBody of an Obstacle - Limbo Trap
  */
-
 export default function BlockLimbo({ position = [0, 0, 0] }) {
-  const limbo = useRef();
+  const limbo = useRef(); //Used as a reference of the limbo obstacle
   const [timeOffset] = useState(() => Math.random() * Math.PI * 2);
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
+    //timeOffset used so that each obstacle will move to and fro motion randomly and not in a pattern
     const y = Math.sin(time + timeOffset) + 1.15;
-
+    //Setting the position of the RigidBody
     limbo.current.setNextKinematicTranslation({
       x: position[0],
       y: position[1] + y,
