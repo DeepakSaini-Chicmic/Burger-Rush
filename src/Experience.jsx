@@ -1,6 +1,6 @@
 import { Physics } from "@react-three/rapier";
 import { Perf } from "r3f-perf";
-import Lights from "./Lights.jsx";
+import Lights from "./Lights/Lights.jsx";
 import Level from "./Level.jsx";
 import Player from "./Player/Player.jsx";
 import BlockSpinner from "./Traps/BlockSpinner.jsx";

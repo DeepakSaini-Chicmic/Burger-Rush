@@ -11,7 +11,7 @@ export default function Player() {
   const rapierWorld = world;
 
   const [smoothCameraPosition] = useState(() => new THREE.Vector3(10, 10, 10));
-  const [smoothCameraTarget] = useState(() => new THREE.Vector3( ));
+  const [smoothCameraTarget] = useState(() => new THREE.Vector3());
 
   const jump = (value) => {
     const origin = ball.current.translation();
