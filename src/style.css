@@ -60,7 +60,7 @@ body,
   width: 100%;
 }
 
-.controls .raw {
+.controls .row {
   display: flex;
   justify-content: center;
 }

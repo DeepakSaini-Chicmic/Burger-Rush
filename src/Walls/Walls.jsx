@@ -4,9 +4,16 @@ import {
   wallMaterial,
 } from "../Geometry And Materials/GeometryAndMaterial";
 
+/**
+ * @desciption Adds Walls
+ * @param length retrieves the length or the number of obstacles to create wall according to obstacles
+ * @returns RigidBody containing meshes around the obstacles floor and normal floor covering the whole floor
+ */
+
 export default function Walls({ length }) {
-  const thickness = 0.3;
-  const height = 1.5;
+  //length - size of walls or length (length)
+  const thickness = 0.3; //Thickness of the Walls (breadth)
+  const height = 1.5; //Height of the Walls (height)
 
   return (
     <>
@@ -29,7 +36,7 @@ export default function Walls({ length }) {
           receiveShadow
         />
 
-        {/* <mesh
+        <mesh
           geometry={boxGeometry}
           material={wallMaterial}
           position={[0, height, 2 + thickness]}
@@ -37,7 +44,7 @@ export default function Walls({ length }) {
           scale={[thickness * 2, height * 2, 4]}
           castShadow
           receiveShadow
-        /> */}
+        />
 
         <mesh
           geometry={boxGeometry}

@@ -3,6 +3,7 @@ import {
   boxGeometry,
   floor1Material,
 } from "../Geometry And Materials/GeometryAndMaterial";
+import { Float, Text } from "@react-three/drei";
 
 /**
  * @description Normal Floor (Contains NO Obstacle)

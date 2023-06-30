@@ -1,11 +1,10 @@
 import { useMemo } from "react";
-import BlockSpinner from "./Traps/BlockSpinner";
-import BlockAxe from "./Traps/BlockAxe";
-import BlockLimbo from "./Traps/BlockLimbo";
+import BlockSpinner from "./Blocks/BlockSpinner";
+import BlockAxe from "./Blocks/BlockAxe";
+import BlockLimbo from "./Blocks/BlockLimbo";
 import Walls from "./Walls/Walls";
-import NormalFloor from "./Floor/NormalFloor";
-import Reward from "./Reward/Reward";
-
+import Reward from "./Blocks/EndBlock";
+import StartBlock from "./Blocks/StartBlock";
 /**
  * @description One Level of the Game
  * @param Count - Number of Obstacle Blocks, by default - 5
@@ -16,6 +15,7 @@ import Reward from "./Reward/Reward";
 export default function Level({
   count = 5,
   types = [BlockSpinner, BlockAxe, BlockLimbo],
+  seed = 0,
 }) {
   const blocks = useMemo(() => {
     const blocks = [];
@@ -24,12 +24,12 @@ export default function Level({
       blocks.push(type);
     }
     return blocks;
-  }, [count, types]);
+  }, [count, types, seed]);
 
   return (
     <>
       <Walls length={count + 2} />
-      <NormalFloor position={[0, 0, 0]} />
+      <StartBlock position={[0, 0, 0]} />
       {blocks.map((Block, index) => (
         <Block key={index} position={[0, 0, -(index + 1) * 4]} />
       ))}

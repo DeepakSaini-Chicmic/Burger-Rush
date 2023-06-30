@@ -17,6 +17,7 @@ import {
 export default function BlockSpinner({ position = [0, 0, 0] }) {
   //Used as a reference of the rigidbody
   const spinner = useRef();
+
   //Speed variable used for varying the speed of the obstacle spin and in random direction
   const [speed] = useState(
     () => (Math.random() + 0.2) * (Math.random() < 0.5 ? -1 : 1)
@@ -26,10 +27,11 @@ export default function BlockSpinner({ position = [0, 0, 0] }) {
   useFrame((state) => {
     const time = state.clock.getElapsedTime(); //Elapsed time
     const eulerRotation = new THREE.Euler(0, time * speed, 0); //Euler Rotation angle in x, y and z
-    const quaternionRotation = new THREE.Quaternion(); //Quaternion Rotation angle
+    const quaternionRotation = new THREE.Quaternion(); //Quaternion Rotation angle in x, y, z and w
     quaternionRotation.setFromEuler(eulerRotation); // setting the Quaternion angle from Euler angle
     spinner.current.setNextKinematicRotation(quaternionRotation); //setNextKinematicRotation - used for rotating the rigid body
   });
+
   return (
     <>
       <group position={position}>

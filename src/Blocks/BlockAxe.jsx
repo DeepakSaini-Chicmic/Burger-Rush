@@ -17,9 +17,11 @@ export default function BlockAxe({ position = [0, 0, 0] }) {
   const axe = useRef(); //Used as a reference of the axe obstacle
   const [timeOffset] = useState(() => Math.random() * Math.PI * 2);
   useFrame((state) => {
-    const time = state.clock.getElapsedTime();
+    const time = state.clock.getElapsedTime(); //Elapsed time since the component rendered
+
     //timeOffset used so that each obstacle will move to and fro motion randomly and not in a pattern
     const x = Math.cos(time + timeOffset) * 1.25;
+
     //Setting the position of the RigidBody
     axe.current.setNextKinematicTranslation({
       x: position[0] + x,
@@ -27,6 +29,7 @@ export default function BlockAxe({ position = [0, 0, 0] }) {
       z: position[2],
     });
   });
+
   return (
     <>
       <group position={position}>

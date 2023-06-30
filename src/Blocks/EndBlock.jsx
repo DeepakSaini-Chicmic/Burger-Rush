@@ -1,5 +1,5 @@
 import { RigidBody } from "@react-three/rapier";
-import { useGLTF } from "@react-three/drei";
+import { Text, useGLTF } from "@react-three/drei";
 import NormalFloor from "../Floor/NormalFloor";
 
 /**
@@ -17,6 +17,14 @@ export default function Reward({ position = [0, 0, 0] }) {
   return (
     <group position={position}>
       <NormalFloor />
+      <Text
+        scale={1}
+        font="bebas-neue-v9-latin-regular.woff"
+        position={[0, 2.25, -1]}
+      >
+        FINISH
+        <meshBasicMaterial color={"#ffffff"} />
+      </Text>
       <RigidBody
         type="fixed"
         colliders="hull"
@@ -24,7 +32,7 @@ export default function Reward({ position = [0, 0, 0] }) {
         restitution={0.2}
         friction={0}
       >
-        {/* Hamburger Model */}
+        {/* Hamburger Model Added in the scene */}
         <primitive object={reward.scene} scale={0.2} />
       </RigidBody>
     </group>
