@@ -6,19 +6,22 @@ import Player from "./Player/Player.jsx";
 import BlockSpinner from "./Blocks/BlockSpinner.jsx";
 import BlockAxe from "./Blocks/BlockAxe.jsx";
 import BlockLimbo from "./Blocks/BlockLimbo.jsx";
-import useGame from "./Stores/useGame.jsx";
+import useGame from "./Store/useGame.jsx";
+import { OrbitControls } from "@react-three/drei";
 /**
  * @description Will contain each and every component for user Experience
- * @returns
+ * @returns whole user experience containing the performance monitor, color of scene, Physics World containing lights, level and player component.
  */
 
 export default function Experience() {
-  const blocksCount = useGame((state) => state.blocksCount);
-  const blocksSeed = useGame((state) => state.blocksSeed);
+  const blocksCount = useGame((state) => state.blocksCount); // fetching the number of obstacle blocks count
+  const blocksSeed = useGame((state) => state.blocksSeed); // fetching blockSeed Variation to randomly shuffle the obstacles
   return (
     <>
       {/* Perfromance Monitor Added */}
       <Perf position="top-left" />
+      {/* <OrbitControls /> */}
+      {/* Added Color to the Background */}
       <color args={["#bdedfc"]} attach={"background"} />
       {/* Physics Added */}
       <Physics debug={false}>

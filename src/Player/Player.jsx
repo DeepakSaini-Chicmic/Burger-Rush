@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRapier, RigidBody } from "@react-three/rapier";
 import * as THREE from "three";
 import { useState, useEffect, useRef } from "react";
-import useGame from "../Stores/useGame";
+import useGame from "../Store/useGame";
 /**
  * @description Player Movement and Camera Movement Following
  * @returns

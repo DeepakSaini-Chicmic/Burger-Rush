@@ -1,7 +1,7 @@
 import { useKeyboardControls } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { addEffect } from "@react-three/fiber";
-import useGame from "../Stores/useGame";
+import useGame from "../Store/useGame";
 
 /**
  * @description 2D User Interface
